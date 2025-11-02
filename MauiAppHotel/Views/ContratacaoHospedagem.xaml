@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+            <GradientStop Color="Yellow" Offset="0.1" />
+            <GradientStop Color="Red" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+        <VerticalStackLayout VerticalOptions="Center"
+                         Padding="10">
+        
+        <Label 
+            Text="Cálculo da Diária"
+            FontFamily="Kalam"
+            FontSize="50"
+            TextColor="Black"/>
+
+        <Frame 
+            Padding="10"
+            BackgroundColor="Gray"
+            BorderColor="Black">
+            
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:"
+                           FontFamily="Kalam"
+                           TextColor="Red"/>
+                    
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="Yellow"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10" 
+                             Increment="1"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"
+                           FontFamily="Kalam"
+                           TextColor="Red"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="Yellow"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+                    
+                           
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                           x:Name="stp_criancas"
+                           Minimum="0"
+                           Maximum="10"
+                           Increment="1"/>
+
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+    
+
+        <!-- Botão para ir à página Sobre -->
+        <Button Text="Sobre -->" FontFamily="Kalam" TextColor="White" BackgroundColor="Black"
+                FontAttributes="Bold" WidthRequest="100"
+                CornerRadius="10"
+                HorizontalOptions="End"  
+                Clicked="OnSobreClicked"/>
+
+
+    </VerticalStackLayout>
+    
+</ContentPage>
