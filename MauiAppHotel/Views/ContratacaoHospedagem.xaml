@@ -5,7 +5,7 @@
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False">
 
-
+    <!-- "Papel de parede" -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
             <GradientStop Color="Yellow" Offset="0.1" />
@@ -13,9 +13,10 @@
         </LinearGradientBrush>
     </ContentPage.Background>
 
-        <VerticalStackLayout VerticalOptions="Center"
+    <VerticalStackLayout VerticalOptions="Center"
                          Padding="10">
-        
+
+        <!-- letrero -->
         <Label 
             Text="Cálculo da Diária"
             FontFamily="Kalam"
@@ -26,8 +27,11 @@
             Padding="10"
             BackgroundColor="Gray"
             BorderColor="Black">
-            
+
+            <!-- quntidade de pessoas -->
+
             <VerticalStackLayout>
+
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
 
@@ -35,7 +39,7 @@
                            Text="Adultos:"
                            FontFamily="Kalam"
                            TextColor="Red"/>
-                    
+
                     <Label Grid.Row="0" Grid.Column="1"
                            TextColor="Yellow"
                            Text="{Binding Value}"
@@ -56,8 +60,6 @@
                            TextColor="Yellow"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_criancas}"/>
-                    
-                           
 
                     <Stepper Grid.Row="1" Grid.Column="2"
                            x:Name="stp_criancas"
@@ -66,18 +68,48 @@
                            Increment="1"/>
 
                 </Grid>
+
+                <!-- escolher a Suíte -->
+                <Label Text="Escolha sua Suíte"
+                       FontFamily="Kalam" />
+
+                <Picker x:Name="pck_quarto"
+                        Title="Selecione a sua acomodação"
+                        FontFamily="Kalam" />
+
+                <!-- escolher a Estadia -->
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Período da Estadia" />
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-in" />
+                            <DatePicker x:Name="dtpck_checkin" 
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-out" />
+                            <DatePicker x:Name="dtpck_checkout" 
+                                        Format="dd/MM/yyyy" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Botão para ir à página Sobre -->
+                <Button Text="Sobre -->" 
+                            FontFamily="Kalam" 
+                            TextColor="White" 
+                            BackgroundColor="Black"
+                            FontAttributes="Bold" 
+                            WidthRequest="100"
+                            CornerRadius="10"
+                            HorizontalOptions="End"  
+                            Clicked="OnSobreClicked"/>
+
             </VerticalStackLayout>
         </Frame>
-    
-
-        <!-- Botão para ir à página Sobre -->
-        <Button Text="Sobre -->" FontFamily="Kalam" TextColor="White" BackgroundColor="Black"
-                FontAttributes="Bold" WidthRequest="100"
-                CornerRadius="10"
-                HorizontalOptions="End"  
-                Clicked="OnSobreClicked"/>
-
-
     </VerticalStackLayout>
-    
+
 </ContentPage>
