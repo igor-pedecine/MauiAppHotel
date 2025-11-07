@@ -2,11 +2,89 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.HospedagemContratada"
-             Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             NavigationPage.HasNavigationBar="False">
+
+    <!-- "Papel de parede" -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+            <GradientStop Color="Yellow" Offset="0.1" />
+            <GradientStop Color="Red" Offset="0.8" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Label Text="Suíte Super Luxo" 
+               TextColor="Black"
+               FontFamily="kalam"
+               FontSize="50"
+               HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="Gray"
+               BorderColor="Black">
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Adultos: "
+                           TextColor="red"
+                           FontFamily="Kalam"/>
+                    <Label Text="2"
+                           TextColor="Yellow"
+                           FontFamily="Kalam" />
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout>
+                    <Label Text="Crianças: "
+                           TextColor="red"
+                           FontFamily="Kalam" />
+                    <Label Text="4"
+                           TextColor="Yellow"
+                           FontFamily="Kalam" />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="Gray"
+               BorderColor="Black">
+            
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="auto, auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="chek-in: " FontFamily="Kalam" TextColor="red"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="chek-out: " FontFamily="Kalam" TextColor="red"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="chek-Estadia: " FontFamily="Kalam" TextColor="red"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="01/12/2024" FontFamily="Kalam" TextColor="Yellow"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="05/12/2024" FontFamily="Kalam" TextColor="Yellow"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="4 noites" FontFamily="Kalam" TextColor="Yellow"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10"
+               Padding="10"
+               BackgroundColor="Gray"
+               BorderColor="Black">
+            
+            <HorizontalStackLayout>
+                <Label Text="Total a pagar:  " FontFamily="Kalam" TextColor="red"/>
+                <Label Text="R$ 2.400,00" FontFamily="Kalam" TextColor="Yellow"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar" 
+                FontFamily="Kalam"
+                BorderColor="Black"
+                TextColor="Yellow" 
+                BackgroundColor="red"
+                FontAttributes="Bold" 
+                WidthRequest="100"
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"/>
+
+
     </VerticalStackLayout>
+    
 </ContentPage>

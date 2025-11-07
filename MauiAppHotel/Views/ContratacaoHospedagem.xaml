@@ -75,40 +75,68 @@
 
                 <Picker x:Name="pck_quarto"
                         Title="Selecione a sua acomodação"
-                        FontFamily="Kalam" />
+                        FontFamily="Kalam"/>
 
                 <!-- escolher a Estadia -->
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="0,10,0,10"
+                       BackgroundColor="Gray"
+                       BorderColor="Black">
+                    
                     <VerticalStackLayout>
-                        <Label Text="Período da Estadia" />
+                        <Label Text="Período da Estadia"
+                               FontFamily="Kalam"/>
 
                         <HorizontalStackLayout>
-                            <Label Text="Check-in" />
+                            <Label Text="Check-in"
+                                   FontFamily="Kalam"/>
                             <DatePicker x:Name="dtpck_checkin" 
-                                        Format="dd/MM/yyyy" />
+                                        Format="dd/MM/yyyy"
+                                        FontFamily="Kalam"/>
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
-                            <Label Text="Check-out" />
+                            <Label Text="Check-out"
+                                   FontFamily="Kalam"/>
                             <DatePicker x:Name="dtpck_checkout" 
-                                        Format="dd/MM/yyyy" />
+                                        Format="dd/MM/yyyy"
+                                        FontFamily="Kalam"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Botão para ir à página Sobre -->
-                <Button Text="Sobre -->" 
-                            FontFamily="Kalam" 
-                            TextColor="White" 
-                            BackgroundColor="Black"
-                            FontAttributes="Bold" 
-                            WidthRequest="100"
-                            CornerRadius="10"
-                            HorizontalOptions="End"  
-                            Clicked="OnSobreClicked"/>
-
+                <!-- Botão para avançar -->
+                <Button Text="Avançar"
+                        FontFamily="Kalam"
+                        BorderColor="Black"
+                        TextColor="Yellow" 
+                        BackgroundColor="red"
+                        FontAttributes="Bold" 
+                        WidthRequest="100"
+                        CornerRadius="10"
+                        HorizontalOptions="Center"
+                        Clicked="Button_Clicked"
+                        />
             </VerticalStackLayout>
+        </Frame>
+
+        <!-- Botão para ir à página Sobre -->
+        <Frame
+            Padding="5"
+            Margin="15,30,15,20"
+            BackgroundColor="Gray"
+            BorderColor="Black">
+            
+            <Button Text="Sobre" 
+                    FontFamily="Kalam"
+                    BorderColor="Black"
+                    TextColor="red" 
+                    BackgroundColor="Yellow"
+                    FontAttributes="Bold" 
+                    WidthRequest="150"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"  
+                    Clicked="OnSobreClicked"/>
         </Frame>
     </VerticalStackLayout>
 

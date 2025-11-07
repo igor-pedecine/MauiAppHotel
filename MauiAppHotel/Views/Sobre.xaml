@@ -5,7 +5,7 @@
              Title="Sobre"
              NavigationPage.HasNavigationBar="False">
 
-    
+    <!-- "Papel de parede" -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
             <GradientStop Color="Yellow" Offset="0.1" />
@@ -15,7 +15,7 @@
 
     <VerticalStackLayout Padding="20" Spacing="25"
                          VerticalOptions="Center">
-
+        <!-- textos sobre o app -->
         <Label Text="Sobre o Aplicativo"
                FontFamily="Kalam"
                FontSize="40"
@@ -31,14 +31,15 @@
                HorizontalTextAlignment="Center" />
 
         <!-- Botão para voltar à página Contratacao -->
-        <Button Text="Voltar-->"
+        <Button Text="Voltar"
                 FontFamily="Kalam"
-                BackgroundColor="Black"
-                TextColor="White"
-                FontAttributes="Bold"
-                CornerRadius="10"
+                BorderColor="Black"
+                TextColor="Yellow" 
+                BackgroundColor="red"
+                FontAttributes="Bold" 
                 WidthRequest="100"
-                HorizontalOptions="Start"
+                CornerRadius="10"
+                HorizontalOptions="Center"
                 Clicked="OnVoltarClicked" />
 
     </VerticalStackLayout>
