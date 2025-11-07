@@ -1,12 +1,10 @@
-﻿
-
-using MauiAppHotel.Models;
+﻿using MauiAppHotel.Models;
 
 namespace MauiAppHotel
 {
     public partial class App : Application
-    {
-        public List<Quarto> Lista_quartos = new List<Quarto> ()
+    { 
+        public List<Quarto> Lista_quartos = new List<Quarto> // Lista de quartos disponível no hotel
         {
             new Quarto()
             {
@@ -47,7 +45,7 @@ namespace MauiAppHotel
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
-        {
+        {   // medidas padrão da janela do aplicativo
             var window = base.CreateWindow(activationState);
             window.Width = 400;
             window.Height = 600;

@@ -75,14 +75,15 @@
 
                 <Picker x:Name="pck_quarto"
                         Title="Selecione a sua acomodação"
-                        FontFamily="Kalam"/>
+                        FontFamily="Kalam"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <!-- escolher a Estadia -->
                 <Frame Padding="10"
                        Margin="0,10,0,10"
                        BackgroundColor="Gray"
                        BorderColor="Black">
-                    
+
                     <VerticalStackLayout>
                         <Label Text="Período da Estadia"
                                FontFamily="Kalam"/>
@@ -90,7 +91,9 @@
                         <HorizontalStackLayout>
                             <Label Text="Check-in"
                                    FontFamily="Kalam"/>
-                            <DatePicker x:Name="dtpck_checkin" 
+                            
+                            <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy"
                                         FontFamily="Kalam"/>
                         </HorizontalStackLayout>
@@ -98,6 +101,7 @@
                         <HorizontalStackLayout>
                             <Label Text="Check-out"
                                    FontFamily="Kalam"/>
+                            
                             <DatePicker x:Name="dtpck_checkout" 
                                         Format="dd/MM/yyyy"
                                         FontFamily="Kalam"/>
